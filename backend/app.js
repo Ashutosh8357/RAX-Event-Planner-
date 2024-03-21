@@ -14,9 +14,21 @@ app.use (cors({
     credentials:true,
 }));
 
+
+
+
 app.use(express.json());
 app.use(express.urlencoded ({ extended:true}) 
 );
+
+app.get("/", (req,res) => {
+    res.json({
+        success: true,
+        message : "Must Visit Our Rewa The Land of White Tigers",
+    });
+});
+
+
 
 app.use("/api/v1/message", messageRouter);
 
